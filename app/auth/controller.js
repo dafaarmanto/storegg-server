@@ -51,6 +51,7 @@ module.exports = {
     } catch (error) {
       if (error && error.name === 'ValidationError') {
         return res.status(422).json({
+          error: 1,
           message: error.message,
           fields: error.errors
         })
